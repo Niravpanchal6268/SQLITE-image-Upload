@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/categories_text_m_a_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Categories"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categories_recycler_view_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categories_text_m_a_id"
+        />
+    <TextView
+        android:id="@+id/product_text_m_a_id"
+        android:layout_below="@id/categories_recycler_view_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Products"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_recyclerview_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/product_text_m_a_id"
+        />
+
+
+
+
+</RelativeLayout>
