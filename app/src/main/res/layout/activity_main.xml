@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Categories"
         android:textStyle="bold"
+     
         android:textColor="@color/black"
         android:textSize="18dp"
         />
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Products"
         android:textStyle="bold"
+
         android:textColor="@color/black"
         android:textSize="18dp"
         />

@@ -45,7 +45,7 @@ public class CategoriesAdapaterClass extends RecyclerView.Adapter<CategoriesAdap
         Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
         holder.categoires_imageView.setImageBitmap(bitmap);
 
-        holder.categoires_imageView.setImageBitmap(bitmap);
+//        holder.categoires_imageView.setImageBitmap(bitmap);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

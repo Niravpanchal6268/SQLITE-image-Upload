@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import com.example.task2sqldatabase.Products.ModelP;
 import com.example.task2sqldatabase.Products.ModelProducts;
 import com.example.task2sqldatabase.Products.ProductAdapterClasss;
 import com.example.task2sqldatabase.Products.ProductDatabase;
@@ -19,7 +20,7 @@ public class ProductListActivity extends AppCompatActivity {
     String CategoryName=null;
     ProductDatabase productDatabase;
     ProductAdapterClasss productAdapterClasss;
-    ArrayList<ModelProducts> modelProductsArrayList=new ArrayList<>();
+    ArrayList<ModelP> modelProductsArrayList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +38,15 @@ public class ProductListActivity extends AppCompatActivity {
 
         while (cursor.moveToNext())
         {
-//            modelProductsArrayList.add(new ModelProducts(cursor.getString(1),cursor.getString(2)
-//                    ,cursor.getString(3),cursor.getString(4),cursor.getString(6)));
+           ModelP modelP=new ModelP();
+            modelP.setProductName(cursor.getString(1));
+            modelP.setProductPrice(cursor.getString(2));
+            modelP.setProductDiscount(cursor.getString(3));
+            modelP.setProductDiscountPrice(cursor.getString(4));
+            modelP.setProductDescription(cursor.getString(6));
+            byte[] pimage=cursor.getBlob(cursor.getColumnIndexOrThrow("ProductImage"));
+            modelP.setProductImage(pimage);
+            modelProductsArrayList.add(modelP);
         }
         productAdapterClasss=new ProductAdapterClasss(this,modelProductsArrayList);
         productlistrecyclerview.setLayoutManager(new GridLayoutManager(this,2));

@@ -39,7 +39,14 @@ public class ProductDatabase extends SQLiteOpenHelper {
 
     public void AddProduct(ModelProducts modelProducts)
     {
+
         SQLiteDatabase db=this.getWritableDatabase();
+
+        Bitmap bitmap=modelProducts.getProductImage();
+        byteArrayOutputStream=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        imagebytes=byteArrayOutputStream.toByteArray();
+
         ContentValues contentValues=new ContentValues();
         contentValues.put("ProductName",modelProducts.getProductName());
         contentValues.put("ProductPrice",modelProducts.getProductPrice());
@@ -47,10 +54,6 @@ public class ProductDatabase extends SQLiteOpenHelper {
         contentValues.put("ProductDisPrice",modelProducts.getProductDiscountPrice());
         contentValues.put("ProductCategories",modelProducts.getProductCategories());
         contentValues.put("ProductDescription",modelProducts.getProductDescription());
-
-        Bitmap bitmap=modelProducts.getProductimage();
-        byteArrayOutputStream=new ByteArrayOutputStream();
-        imagebytes=byteArrayOutputStream.toByteArray();
         contentValues.put("ProductImage",imagebytes);
 
 

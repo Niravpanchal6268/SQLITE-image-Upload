@@ -2,22 +2,21 @@ package com.example.task2sqldatabase.Products;
 
 import android.graphics.Bitmap;
 
-public class ModelProducts {
-    private String ProductName,ProductPrice,ProductDiscount,ProductDiscountPrice,
-        ProductCategories,ProductDescription;
-    private Bitmap ProductImage;
+public class ModelP {
+    private String ProductName,ProductPrice,ProductDiscount,ProductDiscountPrice,ProductDescription;
+    private byte[] ProductImage;
 
-    public ModelProducts(String productName, String productPrice, String productDiscount, String productDiscountPrice, String productCategories, String productDescription, Bitmap productImage) {
+    public ModelP(String productName, String productPrice, String productDiscount, String productDiscountPrice, String productDescription, byte[] productImage) {
+
         ProductName = productName;
         ProductPrice = productPrice;
         ProductDiscount = productDiscount;
         ProductDiscountPrice = productDiscountPrice;
-        ProductCategories = productCategories;
         ProductDescription = productDescription;
         ProductImage = productImage;
     }
 
-    public ModelProducts() {
+    public ModelP() {
     }
 
     public String getProductName() {
@@ -52,14 +51,6 @@ public class ModelProducts {
         ProductDiscountPrice = productDiscountPrice;
     }
 
-    public String getProductCategories() {
-        return ProductCategories;
-    }
-
-    public void setProductCategories(String productCategories) {
-        ProductCategories = productCategories;
-    }
-
     public String getProductDescription() {
         return ProductDescription;
     }
@@ -68,11 +59,11 @@ public class ModelProducts {
         ProductDescription = productDescription;
     }
 
-    public Bitmap getProductImage() {
+    public byte[] getProductImage() {
         return ProductImage;
     }
 
-    public void setProductImage(Bitmap productImage) {
+    public void setProductImage(byte[] productImage) {
         ProductImage = productImage;
     }
 }
